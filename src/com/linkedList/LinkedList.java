@@ -1,5 +1,17 @@
 package com.linkedList;
 
-public class LinkedList {
-
+class LinkedList {
+	
+	Link first;
+	
 }
+
+class Link {
+	
+	int data;
+	Link next;
+	public Link(int data) {
+		this.data = data;
+	}
+}
+
