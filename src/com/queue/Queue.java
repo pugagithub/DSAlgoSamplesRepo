@@ -17,8 +17,8 @@ public class Queue {
 		elemCount++;
 	}
 	
-	int remove(){
-		elemCount--;// REMOVE FROM FRONT
+	int remove(){  // REMOVE FROM FRONT
+		elemCount--;
 		return arr[front++];
 		
 	}
