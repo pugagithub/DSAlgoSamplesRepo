@@ -2,21 +2,33 @@ package com.stack;
 
 public class Stack {
 	
-	int[] arr =new int[10];
-	int top=-1;
+	//Data Block
+	private String[] arr =new String[10];
+	private int top=-1;
 	
 	
-	void push(int data) {
+	void push(String data) {
 		arr[++top] = data;
 	}
 	
-	int pop() {
+	String pop() {
 		return arr[top--];
 	}
 	
-	int peek() {
+	String peek() {
 		return arr[top];
 	}
+	
+	boolean isEmpty() {
+		if(top==-1) return true;
+		else return false;
+	}
+	
+	void display(){
+		for(int i=0;i<=top;i++)System.out.print(arr[i]+"  ");
+	}
+	
+	
 	
 
 }
