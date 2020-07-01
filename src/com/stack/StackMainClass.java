@@ -26,11 +26,15 @@ public class StackMainClass {
 		// ===========================================
 		
 		//================Parenthesis Checker===================
-		
+		System.out.println(parenthesisChecker("((()))"));
+		System.out.println(parenthesisChecker("[{()}]"));
+		System.out.println(parenthesisChecker("[[[]]]"));
+		System.out.println(parenthesisChecker("[[[ Hello Pugal ]]]"));
+		System.out.println(parenthesisChecker("{{)"));
 		//========================================================
 	}
 
-	boolean parenthesisChecker(String str) {
+	static boolean parenthesisChecker(String str) {
 		// ((()))
 		Stack stack = new Stack();
 		for (int i = 0; i < str.length(); i++) {
@@ -39,7 +43,7 @@ public class StackMainClass {
 				stack.push(bracket + "");
 			} else if (isClosedBracket(bracket)) {
 				String fromStack = stack.peek();
-				if (bracket.equalsIgnoreCase("}") && fromStack.equalsIgnoreCase("}")
+				if (bracket.equalsIgnoreCase("}") && fromStack.equalsIgnoreCase("{")
 						|| bracket.equalsIgnoreCase("]") && fromStack.equalsIgnoreCase("[")
 						|| bracket.equalsIgnoreCase(")") && fromStack.equalsIgnoreCase("(")) {
 					stack.pop();
@@ -52,14 +56,14 @@ public class StackMainClass {
 		else return false;
 	}
 
-	boolean isOpenBracket(String s) {
+	static boolean isOpenBracket(String s) {
 		if (s.equalsIgnoreCase("{") || s.equalsIgnoreCase("(") || s.equalsIgnoreCase("["))
 			return true;
 		else
 			return false;
 	}
 
-	boolean isClosedBracket(String s) {
+	static boolean isClosedBracket(String s) {
 		if (s.equalsIgnoreCase("}") || s.equalsIgnoreCase(")") || s.equalsIgnoreCase("]"))
 			return true;
 		else
