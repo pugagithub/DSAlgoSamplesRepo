@@ -21,6 +21,10 @@ public class LinkedListMainClass {
 		
 		mainClass.traverse();
 		
+		mainClass.reverseLinkedList();
+		
+		if(true)return;
+		
 		//=======================Finding Link==========================
 		Link foundLink = mainClass.find(40);
 		System.out.println(foundLink==null? "\nCouldnt find link":"\nFound Link : "+ foundLink.data );
@@ -95,6 +99,20 @@ public class LinkedListMainClass {
 		System.out.println("");
 
 	}
+	
+	void traverse(Link firstLink) {
+
+		Link current = firstLink;
+		while (current != null) {
+			System.out.print(current.data + "   ");
+			current = current.next;
+
+		}
+		
+		System.out.println("");
+
+	}
+	
 
 	Link find(int key) {
 		Link current = first;
@@ -157,4 +175,18 @@ public class LinkedListMainClass {
 			
 		}
 	}
+
+	void reverseLinkedList() {
+		Link current = first;
+		Link previous = null;
+		while(current!=null) {
+			Link nextToCurrent = current.next; 
+			current.next= previous; 
+			previous = current; 
+			current = nextToCurrent;  
+		}
+		
+		traverse(previous);
+	}
+
 }
