@@ -3,6 +3,7 @@ package com.queue;
 public class Queue {
 	
 	int[] arr = new int[20];
+	int elemCount=0;
 	
 	
 	
@@ -13,10 +14,13 @@ public class Queue {
 	void insert(int data) {  // INSERT AT BACK
 		
 		arr[++rear]=data;
+		elemCount++;
 	}
 	
-	int remove(){   // REMOVE FROM FRONT
+	int remove(){
+		elemCount--;// REMOVE FROM FRONT
 		return arr[front++];
+		
 	}
 	
 	
