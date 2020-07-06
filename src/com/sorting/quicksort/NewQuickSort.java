@@ -4,7 +4,8 @@ public class NewQuickSort {
 	
 	public static void main(String[] args) {
 		
-		int[] arr = { 2, 6 , 57, 90, 20, 10, 30, 1 , 5 ,9 };
+	//	int[] arr = { 2, 6 , 57, 90, 20, 10, 30, 1 , 5 ,9 };
+		int[] arr = {70,90,20,40,30};
 		System.out.print("Data Before ---->");
 		for(int data : arr)System.out.print(""+data+",");
 		quicksort(arr,0,arr.length-1);

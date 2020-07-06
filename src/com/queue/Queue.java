@@ -11,13 +11,13 @@ public class Queue {
 	
 	int rear =-1;  // Insert From Back . Insert From i=len-1
 	
-	void insert(int data) {  // INSERT AT BACK
+	public void insert(int data) {  // INSERT AT BACK
 		
 		arr[++rear]=data;
 		elemCount++;
 	}
 	
-	int remove(){  // REMOVE FROM FRONT
+	public int remove(){  // REMOVE FROM FRONT
 		elemCount--;
 		return arr[front++];
 		
