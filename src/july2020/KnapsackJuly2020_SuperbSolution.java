@@ -21,7 +21,7 @@ public class KnapsackJuly2020_SuperbSolution {
 			if(sum == capacity) return bag;
 			else if(sum < capacity) {
 				
-				if(knapsack( bag , i+1 , sum)!=null)return bag; //not i++
+				if(knapsack( bag , i+1 , sum)!=null)return bag; //not i++  //SUCCESS PATH
 			}	
 			
 			sum = sum - items[i];
@@ -29,7 +29,7 @@ public class KnapsackJuly2020_SuperbSolution {
 			
 			
 		}
-		return null;
+		return null;  // FAILURE PATH
 		
 	}
 	
