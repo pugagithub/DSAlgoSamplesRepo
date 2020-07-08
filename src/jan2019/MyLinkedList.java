@@ -1,23 +1,23 @@
-package jan2019.LinkedList;
+package jan2019;
 
 public class MyLinkedList {
 	
-	Node firstNode;
+	LinkNode firstNode;
 	
 	public static void main(String[] args) {
 		
 		MyLinkedList ll = new MyLinkedList();
 		
-		add(ll , new Node(1, null));
-		add(ll , new Node(2, null));
-		add(ll , new Node(3, null));
-		add(ll , new Node(4, null));
-		add(ll , new Node(5, null));
+		add(ll , new LinkNode(1, null));
+		add(ll , new LinkNode(2, null));
+		add(ll , new LinkNode(3, null));
+		add(ll , new LinkNode(4, null));
+		add(ll , new LinkNode(5, null));
 		
 		
 		traverse(ll);
 		
-		delete(ll,2 , new Node(10, null));
+		delete(ll,2 , new LinkNode(10, null));
 		
 		System.out.println();
 		
@@ -30,11 +30,11 @@ public class MyLinkedList {
 	
 	
 	
-	public static void add(MyLinkedList ll , Node node){
+	public static void add(MyLinkedList ll , LinkNode node){
 		
 		if(ll.firstNode == null) ll.firstNode = node;
 		else{
-			Node currentNode = ll.firstNode;
+			LinkNode currentNode = ll.firstNode;
 			while(currentNode.next != null){  // While Loop to move past the data
 				currentNode = currentNode.next;  // Change the condition inside the while loop so the condition may fail later.
 			}
@@ -45,7 +45,7 @@ public class MyLinkedList {
 	
 	public static void traverse(MyLinkedList ll){
 		
-		Node currentNode = ll.firstNode;
+		LinkNode currentNode = ll.firstNode;
 		while(currentNode.next!=null){
 			System.out.print(currentNode.data+"  |  ");
 			currentNode = currentNode.next;
@@ -54,10 +54,10 @@ public class MyLinkedList {
 	}
 	
 	
-	public static void delete(MyLinkedList ll , int dataTobeDeleted , Node newNode){
+	public static void delete(MyLinkedList ll , int dataTobeDeleted , LinkNode newNode){
 		
-		Node currentNode = ll.firstNode;
-		Node parentNode = null;
+		LinkNode currentNode = ll.firstNode;
+		LinkNode parentNode = null;
 		while(currentNode.next!=null){
 			if(currentNode.data == dataTobeDeleted){
 				
@@ -79,12 +79,12 @@ public class MyLinkedList {
 
 }// Class End
 
-class Node {
+ class LinkNode {
 	
 	int data;
-	Node next;
+	LinkNode next;
 	
-	Node(int data , Node next){
+	LinkNode(int data , LinkNode next){
 		this.data = data;
 		this.next = next;
 	}
