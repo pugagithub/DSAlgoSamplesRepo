@@ -1,9 +1,11 @@
 package july2020;
 
+import com.geeksforgeeks.tree.Node;
+
 public class TreeMainClass {
 	
 	BinarySearchTree tree = new BinarySearchTree();
-	Node root = tree.root;
+	public Node root = tree.root;
 	
 	
 	/**
@@ -19,11 +21,12 @@ public class TreeMainClass {
 	public static void main(String[] args) {
 		
 		TreeMainClass mainClass =new TreeMainClass();
-		mainClass.insert(new Node(30));
-		mainClass.insert(new Node(10));
-		mainClass.insert(new Node(20));
-		mainClass.insert(new Node(40));
-		mainClass.insert(new Node(5));
+		/*
+		 * mainClass.insert(new Node(30)); mainClass.insert(new Node(10));
+		 * mainClass.insert(new Node(20)); mainClass.insert(new Node(40));
+		 * mainClass.insert(new Node(5));
+		 */
+		insertData(mainClass);
 		
 		System.out.println("======InOrder traversal=====================");
 		mainClass.inOrderTraversal(mainClass.root);
@@ -37,7 +40,16 @@ public class TreeMainClass {
 		System.out.println(foundNode==null? "Key Not Found": "Found Key : "+ foundNode.data);
 	}
 	
-	void insert(Node newNode) {
+	public static void insertData(TreeMainClass tree){
+		
+		tree.insert(new Node(30));
+		tree.insert(new Node(10));
+		tree.insert(new Node(20));
+		tree.insert(new Node(40));
+		tree.insert(new Node(5));
+	}
+	
+	public void insert(Node newNode) {
 		
 		if(root == null) {root = newNode; return;}  // Check For Root Node is empty
 		Node current = root;
@@ -58,13 +70,13 @@ public class TreeMainClass {
 		if(isLeftChild)previous.leftChild = newNode;
 		else previous.rightChild = newNode;
 	}
-	void inOrderTraversal(Node node) {
+	public void inOrderTraversal(Node node) {
 		if(node==null) return;
 		inOrderTraversal(node.leftChild);
 		System.out.println(node.data + "  ");
 		inOrderTraversal(node.rightChild);
 	}
-	void preOrderTraversal(Node node) {
+	public void preOrderTraversal(Node node) {
 		if(node==null) return;
 		System.out.println(node.data + "  ");
 		preOrderTraversal(node.leftChild);

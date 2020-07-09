@@ -1,5 +1,7 @@
 package july2020;
 
+import com.geeksforgeeks.tree.Node;
+
 public class BinarySearchTree {
 	
 	Node root;
@@ -7,12 +9,4 @@ public class BinarySearchTree {
 
 }
 
-class Node {
-	
-	int data;
-	Node leftChild;
-	Node rightChild;
-	
-	Node(int data){this.data = data;}
-	
-}
+

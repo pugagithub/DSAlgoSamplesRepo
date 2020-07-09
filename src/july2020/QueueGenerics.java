@@ -6,7 +6,7 @@ public class QueueGenerics<T> {
 	T[]  arr;
 	
 	public QueueGenerics(Class<T> clazz){
-		arr = (T[])Array.newInstance(clazz, 10);
+		arr = (T[])Array.newInstance(clazz, 1000);
 	}
 		
 		int elemCount=0;
