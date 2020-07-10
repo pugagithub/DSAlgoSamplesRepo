@@ -20,7 +20,7 @@ public class InvertedVPattern {
 	// n ---> num of rows
 	//So actual rectangle should be 2*n
 	//mid = n
-	//2n + 1 to fill the last gap
+	//col width should be odd num , hence 2n-1
 	static void printInvertedV(int n){
 		int mid = n;
 		for(int i=1;i<=n;i++) {  // row is n , col is 2n
