@@ -1,5 +1,5 @@
 package com.geeksforgeeks.backtracking;
 
-public class RatInAMaze {
+public class SnakeLadderProblem {
 
 }

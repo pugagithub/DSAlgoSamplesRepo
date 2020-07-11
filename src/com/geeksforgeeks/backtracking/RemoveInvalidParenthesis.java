@@ -1,5 +1,5 @@
 package com.geeksforgeeks.backtracking;
 
-public class Sudoku {
+public class RemoveInvalidParenthesis {
 
 }
