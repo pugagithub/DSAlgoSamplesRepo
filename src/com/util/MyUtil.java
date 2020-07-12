@@ -27,4 +27,14 @@ public static void swap(int[] a , int i , int j){
 		
 	}
 
+public static String swap_in_string(String str , int i , int j){
+	
+	char[] charArr = str.toCharArray();
+	char temp = charArr[i];
+	charArr[i] = charArr[j];
+	charArr[j]=temp;
+	return String.valueOf(charArr); 
+	
+}
+
 }
