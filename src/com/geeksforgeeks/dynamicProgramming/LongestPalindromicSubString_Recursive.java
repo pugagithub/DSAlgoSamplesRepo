@@ -1,23 +1,27 @@
 package com.geeksforgeeks.dynamicProgramming;
 
 import com.geeksforgeeks.string.Palindrome;
+import com.geeksforgeeks.string.PalindromeRecursive;
 
 //Substring is continuous
 //Subsequence can have elems in between
 public class LongestPalindromicSubString_Recursive {
 
-	static String word1 = "forgeeksskeegfor" ;
-	static String word = "Geeks";
+	static String word = "xyabbamnop" ;
+	//static String word = "abxyba";
 
 	static String longestPalindrome = "";
 	
 	public static void main(String[] args) {
 		
-		palindromicSubString(word);
-		System.out.println(longestPalindrome);
+		palindromicSubString_Iterative(word);
+		
+		//palindromicSubString_Backtracing_Approach("",0);
+		System.out.println("Longest Palindrome is : "+ longestPalindrome);
 	}
 
-	static void palindromicSubString(String word) {
+	static void palindromicSubString_Iterative(String word) {
+
 
 		for (int i = 0; i < word.length(); i++) {
 
@@ -26,16 +30,14 @@ public class LongestPalindromicSubString_Recursive {
 
 				if (startChar.equals(word.charAt(j)+"")) {
 
-					int m = i ;
-					int n = j ;
-
-					if (Palindrome.checkForPalindrome(word, m, n)) {
-						if (n - m >= longestPalindrome.length()) {
+					
+					if (Palindrome.checkForPalindrome(word.substring(i,j+1),false)) {
+						if (j - i >= longestPalindrome.length()) {
 							longestPalindrome = word.substring(i, j + 1);
 						}
-						i= j+1;
+						//i= j+1;
 					}
-					else break;
+					else continue;
 
 				}
 				
@@ -45,5 +47,34 @@ public class LongestPalindromicSubString_Recursive {
 		}
 
 	}
+
+static void palindromicSubString_Backtracing_Approach(String context , int startIdx) {
+		
+		if(startIdx>word.length()) return;
+		
+		for(int i=startIdx;i<word.length();i++) {
+			
+			String temp = context;
+			context = context + (word.charAt(i)+"");
+			
+			if(Palindrome.checkForPalindrome(context,false)) {
+				checkAndUpdateLongestPalindrome(context);
+			}
+			
+			palindromicSubString_Backtracing_Approach( context ,  i+1);
+			//context = temp;  ====> only diff with subString and SubSeq
+		}
+		
+		
+	}
+
+static void checkAndUpdateLongestPalindrome(String context) {
+	if(Palindrome.checkForPalindrome(context,false)) {
+		if(context.length()>longestPalindrome.length())longestPalindrome = context;
+		if(context.length()==longestPalindrome.length())System.out.println("Palindromes are  :" + context);
+	}
+	
+}
+
 
 }
