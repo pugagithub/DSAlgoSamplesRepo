@@ -20,23 +20,16 @@ public class LongestPalindromicSubSequence {
 
 
 	static void palindromicSubSequence_Backtracing_Approach(String context , int startIdx) {
-		
 		if(startIdx>word.length()) return;
-		
 		for(int i=startIdx;i<word.length();i++) {
-			
 			String temp = context;
 			context = context + (word.charAt(i)+"");
-			
 			if(Palindrome.checkForPalindrome(context,false)) {
 				checkAndUpdateLongestPalindrome(context);
 			}
-			
 			palindromicSubSequence_Backtracing_Approach( context ,  i+1);
-			context = temp;  //====> only diff with subString and SubSeq
+			context = temp;  //====> only diff with subString and SubSeq , restoring the context
 		}
-		
-		
 	}
 	
 	
