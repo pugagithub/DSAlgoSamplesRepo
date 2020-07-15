@@ -1,5 +1,4 @@
-package com.Recursion;
-
+package com.geeksforgeeks.recursion;
 /**
  * Very Important
  * @author hendh

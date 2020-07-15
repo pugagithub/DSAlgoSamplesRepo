@@ -1,4 +1,4 @@
-package com.Recursion;
+package com.geeksforgeeks.recursion;
 
 public class BinarySearchRecursive {
 	
