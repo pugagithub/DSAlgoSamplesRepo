@@ -2,6 +2,7 @@ package com.geeksforgeeks.dynamicProgramming.tabulationApproach;
 
 public class EggDroppingPuzzle {
 	
-	//Formulae
+	//Min no of trials to determine from which floor egg gets broken.
+	
 
 }

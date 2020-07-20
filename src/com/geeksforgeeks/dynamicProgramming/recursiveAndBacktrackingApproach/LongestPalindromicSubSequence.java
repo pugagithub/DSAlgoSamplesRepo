@@ -7,7 +7,7 @@ import com.geeksforgeeks.string.Palindrome;
 
 public class LongestPalindromicSubSequence {
 
-	static String word = "BBABCBCAB";
+	static String word = "AMMAX";
 	//static String word = "GEEKSFORGEEKS";
 	static String longestPalindrome = "";
 	List<String> list = new ArrayList<String>();
@@ -20,15 +20,20 @@ public class LongestPalindromicSubSequence {
 
 
 	static void palindromicSubSequence_Backtracing_Approach(String context , int startIdx) {
-		if(startIdx>word.length()) return;
+		if(startIdx>=word.length()) {
+			System.out.println("i :"+ startIdx+ " hence returning");
+			return;
+		}
 		for(int i=startIdx;i<word.length();i++) {
 			String temp = context;
 			context = context + (word.charAt(i)+"");
+			System.out.println("i : "+i+" Before Context : "+ temp +" : After Context : "+ context);
 			if(Palindrome.checkForPalindrome(context,false)) {
 				checkAndUpdateLongestPalindrome(context);
 			}
 			palindromicSubSequence_Backtracing_Approach( context ,  i+1);
-			context = temp;  //====> only diff with subString and SubSeq , restoring the context
+			context = temp;  
+			System.out.println("Resetting Context as : "+ context );
 		}
 	}
 	

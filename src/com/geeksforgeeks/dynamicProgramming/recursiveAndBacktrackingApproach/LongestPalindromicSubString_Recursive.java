@@ -14,9 +14,9 @@ public class LongestPalindromicSubString_Recursive {
 	
 	public static void main(String[] args) {
 		
-		palindromicSubString_Iterative(word);
+		//palindromicSubString_Iterative(word);
 		
-		//palindromicSubString_Backtracing_Approach("",0);
+		for(int i=0;i<word.length();i++)palindromicSubString_Backtracing_Approach("",i);
 		System.out.println("Longest Palindrome is : "+ longestPalindrome);
 	}
 
@@ -50,20 +50,20 @@ public class LongestPalindromicSubString_Recursive {
 
 static void palindromicSubString_Backtracing_Approach(String context , int startIdx) {
 		
-		if(startIdx>word.length()) return;
+		if(startIdx>=word.length()) return;
 		
-		for(int i=startIdx;i<word.length();i++) {
+		//for(int i=startIdx;i<word.length();i++) {
 			
 			String temp = context;
-			context = context + (word.charAt(i)+"");
+			context = context + (word.charAt(startIdx)+"");
 			
 			if(Palindrome.checkForPalindrome(context,false)) {
 				checkAndUpdateLongestPalindrome(context);
 			}
 			
-			palindromicSubString_Backtracing_Approach( context ,  i+1);
-			//context = temp;  ====> only diff with subString and SubSeq
-		}
+			palindromicSubString_Backtracing_Approach( context ,  startIdx+1);
+			context = temp; 
+		//}
 		
 		
 	}
