@@ -2,8 +2,8 @@ package com.geeksforgeeks.dynamicProgramming.recursiveAndBacktrackingApproach;
 
 public class LongestCommonSubsequence {
 	
-	static String str1 = "ABCDGH";
-	static String str2 = "AEDFHR";
+	static String str1 = "abbcdgf";
+	static String str2 = "bbadcgf";
 	static int maxSubSeq = 0;
 	
 	public static void main(String[] args) {
@@ -32,10 +32,10 @@ public class LongestCommonSubsequence {
 					}
 				}
 			}
-			
+			System.out.println(" Temp Sub Seq : " + tempSubSeq);
 			if(count > maxSubSeq) {
 				
-				System.out.println(" Temp Sub Seq : " + tempSubSeq);
+				System.out.println(" Max Sub : " + tempSubSeq);
 				maxSubSeq = count ;
 				
 			}
