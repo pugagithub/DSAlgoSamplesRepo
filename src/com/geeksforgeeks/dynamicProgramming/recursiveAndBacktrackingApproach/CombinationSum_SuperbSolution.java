@@ -1,4 +1,4 @@
-package com.geeksforgeeks.recursion;
+package com.geeksforgeeks.dynamicProgramming.recursiveAndBacktrackingApproach;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,8 +17,8 @@ public class CombinationSum_SuperbSolution {
 	 * combination always backtracking
 	 */
 
-	static int[] arr = { 2, 4, 6, 8 };
-	static int target = 8;
+	static int[] arr ={1, 5, 10};
+	static int target = 10;
 	static List<List<Integer>> outerList = new ArrayList<List<Integer>>();
 	static int setCount = 0;
 
@@ -32,7 +32,6 @@ public class CombinationSum_SuperbSolution {
 	static void combinationSum(int startIdx, int sum, List<Integer> list) {
 
 		for (int i = startIdx; i < arr.length; i++) {
-			boolean targetAchieved = false;
 			sum = sum + arr[i];
 			list.add(list.size(), arr[i]);
 			
@@ -41,18 +40,12 @@ public class CombinationSum_SuperbSolution {
 
 			} else if (sum < target) {
 				combinationSum(i, sum, list);
-
 			}
-
 			if (sum > target) {
-				combinationSum(i + 1, sum, list);
-
+				//combinationSum(i + 1, sum, list);
 			}
-
 			sum = sum - arr[i];
 			list.remove(list.size() - 1);
-
-			// if(targetAchieved)i = i - 1; // one item can be picked up many time
 		}
 
 	}

@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/hendh/Downloads/commons-beanutils-1.9.4-bin/commons-beanutils-1.9.4/commons-beanutils-1.9.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hendh/Downloads/commons-logging-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/hendh/Downloads/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/hendh/Downloads/commons-beanutils-1.9.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
