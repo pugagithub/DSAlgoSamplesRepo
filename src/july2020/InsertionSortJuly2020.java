@@ -15,7 +15,7 @@ public class InsertionSortJuly2020 {
 				}
 				else break;
 			}
-			arr[j+1] = temp;  // ====> (j+1)
+			arr[j+1] = temp;  // ====> as arr[j] is less than temp
 		}
 	}
 	

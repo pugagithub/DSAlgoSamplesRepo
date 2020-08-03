@@ -37,4 +37,17 @@ public static String swap_in_string(String str , int i , int j){
 	
 }
 
+ public static void  printMatrix(int[][] arr) {
+	 
+	 for(int i=0;i<arr.length;i++) {
+			System.out.println("");
+			for(int j=0;j<arr.length;j++) {
+				System.out.print(arr[i][j]+ " ");
+			}
+		}
+	 
+	 System.out.println("");
+		
+ }
+
 }
