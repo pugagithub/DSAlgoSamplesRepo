@@ -24,7 +24,9 @@ public class TopologicalSorting {
 		adjMatrix[1][4] = 1;
 		
 		
-		topoSort_AdjMatrixApproach();
+	//	topoSort_AdjMatrixApproach();
+		
+		topoSort_AdjMatrixApproach_New();
 		
 		
 	}
@@ -58,6 +60,23 @@ public class TopologicalSorting {
 		}
 	 }
 	
+	static void  topoSort_AdjMatrixApproach_New(){
+		 Stack<Integer> stack = new Stack<Integer>();
+			int nodeWithoutSuccessor = 100;
+			while (nodeWithoutSuccessor != -1) {
+				nodeWithoutSuccessor = getNodeWhichDoesntHaveAnySuccessor(stack);
+				if (nodeWithoutSuccessor != -1) {
+					deleteEdgeFromPredecessor(nodeWithoutSuccessor);
+					stack.add(nodeWithoutSuccessor);
+				}
+			
+		}
+		while(!stack.isEmpty()) {
+			System.out.print(stack.pop()+1 + " ");
+		}
+	 }
+	
+	
 	private static void deleteEdgeFromPredecessor( int nodeWithoutSuccessor) {
 		for (int m = 0; m < adjMatrix.length; m++) {
 			if (adjMatrix[m][nodeWithoutSuccessor] == 1) {
@@ -78,7 +97,7 @@ public class TopologicalSorting {
 			}
 			
 			// There may be many nodes which dont have any successor , but this function only returns the first node
-			System.out.println("allOutgoingEdgeIsZero :"+ allOutgoingEdgeIsZero +" j: "+ j);
+			//System.out.println("allOutgoingEdgeIsZero :"+ allOutgoingEdgeIsZero +" j: "+ j);
 			if(allOutgoingEdgeIsZero && j <= adjMatrix.length && !stack.contains(i)) return i; 
 			
 		}
